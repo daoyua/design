@@ -1,12 +1,8 @@
 package com.module.zy.moduleproject;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.TextView;
 
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
@@ -40,5 +36,10 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("tab2"));
         tabLayout.addTab(tabLayout.newTab().setText("tab3"));
         tabLayout.setupWithViewPager(new ViewPager(this));
+
+        CollapsingToolbarLayout   collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
+        collapsingToolbarLayout.setTitle("Design Library");
+
+
     }
 }

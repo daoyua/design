@@ -8,60 +8,60 @@
     tools:openDrawer="start">
 
 
-    <!--<LinearLayout-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:orientation="vertical"-->
-    <!--&gt;-->
-    <!--<Button-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:text="Yo Yo" />-->
-
-    <!--<Button-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:text="Yo Yo" />-->
-    <!--</LinearLayout>-->
-
-
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/rootlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
+        android:fitsSystemWindows="true"
         tools:context=".MainActivity">
 
 
         <com.google.android.material.appbar.AppBarLayout
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_width="match_parent"
+            android:fitsSystemWindows="true"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbarLayout"
+            android:fitsSystemWindows="true"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:layout_height="200dp">
+            <ImageView android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher" />
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
-                app:layout_scrollFlags="scroll|enterAlways"
+                app:layout_collapseMode="pin"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
+                <!--app:layout_scrollFlags="scroll|enterAlways"-->
             </androidx.appcompat.widget.Toolbar>
 
+
+
+
+
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
             <com.google.android.material.tabs.TabLayout
-                app:layout_scrollFlags="enterAlways"
                 android:id="@+id/tabLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:layout_scrollFlags="enterAlways"
                 app:tabGravity="fill"
                 app:tabIndicatorColor="#FF4081"
                 app:tabMode="fixed"
                 app:tabTextColor="#000000"
-                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+            </com.google.android.material.appbar.AppBarLayout>
 
-
-            </com.google.android.material.tabs.TabLayout>
-        </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -88,6 +88,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yo Yo" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yo Yo" />
+
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -102,34 +108,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yo Yo" />
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Yo Yo" />
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Yo Yo" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Yo Yo" />
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Yo Yo" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Yo Yo" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Yo Yo" />
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -159,6 +138,32 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yo Yo" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yo Yo" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yo Yo" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yo Yo" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yo Yo" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yo Yo" />
+
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
