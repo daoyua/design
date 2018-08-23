@@ -62,6 +62,7 @@
                 </com.google.android.material.appbar.CollapsingToolbarLayout>
 
                 <com.google.android.material.tabs.TabLayout
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
                     android:id="@+id/tabLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
