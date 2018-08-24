@@ -50,16 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
         snakerview = findViewById(R.id.container);
 
-        tabLayout = findViewById(R.id.tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("tab1"));
-        tabLayout.addTab(tabLayout.newTab().setText("tab2"));
-        tabLayout.addTab(tabLayout.newTab().setText("tab3"));
-        tabLayout.setupWithViewPager(new ViewPager(this));
-
-
-        viewpageer = findViewById(R.id.viewpageer);
-
-
         CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
         collapsingToolbarLayout.setTitle("Design Library");
 
@@ -100,10 +90,23 @@ public class MainActivity extends AppCompatActivity {
         listFragments.add(f1);
         listFragments.add(f2);
         listFragments.add(f3);
+        viewpageer = findViewById(R.id.viewpageer);
+
 
         fragmentPagerAdapter = new TabFragmentPagerAdapter(getSupportFragmentManager(), listFragments);
         viewpageer.setAdapter(fragmentPagerAdapter);
+
+        tabLayout = findViewById(R.id.tabLayout);
+
         tabLayout.setupWithViewPager(viewpageer);
+//        tabLayout.addTab(tabLayout.newTab().setText("tab1"));
+//        tabLayout.addTab(tabLayout.newTab().setText("tab2"));
+//        tabLayout.addTab(tabLayout.newTab().setText("tab3"));
+        for(int i=0;i<tabLayout.getTabCount();i++){
+            TabLayout.Tab tabAt = tabLayout.getTabAt(i);
+            tabAt.setText("Tab"+i);
+        }
+
         viewpageer.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
