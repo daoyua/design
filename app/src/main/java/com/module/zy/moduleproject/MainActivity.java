@@ -2,24 +2,24 @@ package com.module.zy.moduleproject;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
-import com.module.zy.base_feature.Base.BaseActivity;
-import com.module.zy.base_feature.Base.BaseActivityMVP;
-import com.module.zy.base_feature.Base.BasePresenter;
 import com.module.zy.moduleproject.fragment.Fragment1;
 import com.module.zy.moduleproject.fragment.Fragment2;
 import com.module.zy.moduleproject.fragment.Fragment3;
 
 import java.util.ArrayList;
+
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
+import module.base.baseframwork.base.BaseActivity;
+import module.base.baseframwork.base.BaseActivityMVP;
+import module.base.baseframwork.base.BasePresenter;
 
 public class MainActivity extends BaseActivityMVP {
 
