@@ -9,6 +9,8 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import com.module.zy.base_feature.Base.BaseActivity;
+import com.module.zy.base_feature.Base.BaseActivityMVP;
+import com.module.zy.base_feature.Base.BasePresenter;
 import com.module.zy.moduleproject.fragment.Fragment1;
 import com.module.zy.moduleproject.fragment.Fragment2;
 import com.module.zy.moduleproject.fragment.Fragment3;
@@ -22,7 +24,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivityMVP {
 
     private Toolbar toolbar1;
     private CoordinatorLayout rootlayout;
@@ -38,6 +40,16 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_main);
 
+
+    }
+
+    @Override
+    protected BasePresenter initPresenter() {
+        return null;
+    }
+
+    @Override
+    protected void onCreateActivity(Bundle savedInstanceState) {
 
     }
 
@@ -87,6 +99,11 @@ public class MainActivity extends BaseActivity {
 
 
         initFragment();
+    }
+
+    @Override
+    protected BaseActivity getActivity() {
+        return this;
     }
 
     @Override
@@ -155,6 +172,11 @@ public class MainActivity extends BaseActivity {
 
         }
         ;
+
+    }
+
+    @Override
+    public void isNightMode(boolean isNight) {
 
     }
 }

@@ -11,7 +11,7 @@ import com.module.zy.base_feature.R;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity implements BaseView {
     /***是否显示标题栏*/
     private boolean isshowtitle = true;
     /***是否显示标题栏*/
@@ -43,7 +43,10 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
+
     protected abstract void initView();
+
+    protected abstract BaseActivity getActivity();
 
     public abstract int intiLayout();
 
