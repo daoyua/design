@@ -8,6 +8,7 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
+import com.module.zy.base_feature.Base.BaseActivity;
 import com.module.zy.moduleproject.fragment.Fragment1;
 import com.module.zy.moduleproject.fragment.Fragment2;
 import com.module.zy.moduleproject.fragment.Fragment3;
@@ -21,7 +22,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private Toolbar toolbar1;
     private CoordinatorLayout rootlayout;
@@ -35,53 +36,69 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+//        setContentView(R.layout.activity_main);
 
-        initview();
+
+    }
+
+    @Override
+    protected void initView() {
+
+            rootlayout = findViewById(R.id.rootlayout);
+            Snackbar.make(rootlayout, "helloword", Snackbar.LENGTH_SHORT).show();
+
+            toolbar1 = findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar1);
+
+            snakerview = findViewById(R.id.container);
+
+            CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
+            collapsingToolbarLayout.setTitle("Design Library");
+
+
+            navigation = findViewById(R.id.navigation);
+
+            navigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(MenuItem menuItem) {
+                    int id = menuItem.getItemId();
+
+                    switch (id) {
+                        case R.id.navItem1:
+
+                            Snackbar.make(snakerview, "hello 1", Snackbar.LENGTH_SHORT).show();
+                            break;
+                        case R.id.navItem2:
+                            Snackbar.make(snakerview, "hello 2", Snackbar.LENGTH_SHORT).show();
+                            break;
+                        case R.id.navItem3:
+                            Snackbar.make(snakerview, "hello 3", Snackbar.LENGTH_SHORT).show();
+                            break;
+                        case R.id.navItem4:
+                            Snackbar.make(snakerview, "hello 4", Snackbar.LENGTH_SHORT).show();
+                            break;
+                    }
+                    return false;
+
+
+                }
+            });
+
+
+
         initFragment();
     }
 
-    private void initview() {
-        rootlayout = findViewById(R.id.rootlayout);
-        Snackbar.make(rootlayout, "helloword", Snackbar.LENGTH_SHORT).show();
-
-        toolbar1 = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar1);
-
-        snakerview = findViewById(R.id.container);
-
-        CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
-        collapsingToolbarLayout.setTitle("Design Library");
-
-
-        navigation = findViewById(R.id.navigation);
-
-        navigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem menuItem) {
-                int id = menuItem.getItemId();
-
-                switch (id) {
-                    case R.id.navItem1:
-                        Snackbar.make(snakerview, "hello 1", Snackbar.LENGTH_SHORT).show();
-                        break;
-                    case R.id.navItem2:
-                        Snackbar.make(snakerview, "hello 2", Snackbar.LENGTH_SHORT).show();
-                        break;
-                    case R.id.navItem3:
-                        Snackbar.make(snakerview, "hello 3", Snackbar.LENGTH_SHORT).show();
-                        break;
-                    case R.id.navItem4:
-                        Snackbar.make(snakerview, "hello 4", Snackbar.LENGTH_SHORT).show();
-                        break;
-                }
-                return false;
-
-
-            }
-        });
-
+    @Override
+    public int intiLayout() {
+        return R.layout.activity_main;
     }
+
+    @Override
+    public int initData() {
+        return 0;
+    }
+
 
     private void initFragment() {
         Fragment f1 = new Fragment1();

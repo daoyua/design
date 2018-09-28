@@ -12,7 +12,6 @@ public class TabFragmentPagerAdapter extends FragmentPagerAdapter {
     public TabFragmentPagerAdapter(FragmentManager fm,ArrayList<Fragment> list) {
         super(fm);
         listFragments=list;
-
     }
 
     @Override
