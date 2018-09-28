@@ -1,1 +1,1 @@
-include ':app', ':loginmodule', ':base_feature'
+include ':app', ':loginmodule', ':base_mdule'

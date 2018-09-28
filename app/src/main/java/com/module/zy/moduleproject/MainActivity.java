@@ -16,9 +16,6 @@ import com.module.zy.moduleproject.fragment.Fragment2;
 import com.module.zy.moduleproject.fragment.Fragment3;
 
 import java.util.ArrayList;
-import java.util.zip.Inflater;
-
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
@@ -45,7 +42,17 @@ public class MainActivity extends BaseActivityMVP {
 
     @Override
     protected BasePresenter initPresenter() {
-        return null;
+        return new BasePresenter() {
+            @Override
+            public void onCreate() {
+
+            }
+
+            @Override
+            public void onSaveInstanceState(Bundle outState) {
+
+            }
+        };
     }
 
     @Override
