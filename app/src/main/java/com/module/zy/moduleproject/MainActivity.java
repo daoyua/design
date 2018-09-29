@@ -63,46 +63,45 @@ public class MainActivity extends BaseActivityMVP {
     @Override
     protected void initView() {
 
-            rootlayout = findViewById(R.id.rootlayout);
-            Snackbar.make(rootlayout, "helloword", Snackbar.LENGTH_SHORT).show();
+        rootlayout = findViewById(R.id.rootlayout);
+        Snackbar.make(rootlayout, "helloword", Snackbar.LENGTH_SHORT).show();
 
-            toolbar1 = findViewById(R.id.toolbar);
-            setSupportActionBar(toolbar1);
+        toolbar1 = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar1);
 
-            snakerview = findViewById(R.id.container);
+        snakerview = findViewById(R.id.container);
 
-            CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
-            collapsingToolbarLayout.setTitle("Design Library");
-
-
-            navigation = findViewById(R.id.navigation);
-
-            navigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(MenuItem menuItem) {
-                    int id = menuItem.getItemId();
-
-                    switch (id) {
-                        case R.id.navItem1:
-
-                            Snackbar.make(snakerview, "hello 1", Snackbar.LENGTH_SHORT).show();
-                            break;
-                        case R.id.navItem2:
-                            Snackbar.make(snakerview, "hello 2", Snackbar.LENGTH_SHORT).show();
-                            break;
-                        case R.id.navItem3:
-                            Snackbar.make(snakerview, "hello 3", Snackbar.LENGTH_SHORT).show();
-                            break;
-                        case R.id.navItem4:
-                            Snackbar.make(snakerview, "hello 4", Snackbar.LENGTH_SHORT).show();
-                            break;
-                    }
-                    return false;
+        CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
+        collapsingToolbarLayout.setTitle("Design Library");
 
 
+        navigation = findViewById(R.id.navigation);
+
+        navigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                int id = menuItem.getItemId();
+
+                switch (id) {
+                    case R.id.navItem1:
+
+                        Snackbar.make(snakerview, "hello 1", Snackbar.LENGTH_SHORT).show();
+                        break;
+                    case R.id.navItem2:
+                        Snackbar.make(snakerview, "hello 2", Snackbar.LENGTH_SHORT).show();
+                        break;
+                    case R.id.navItem3:
+                        Snackbar.make(snakerview, "hello 3", Snackbar.LENGTH_SHORT).show();
+                        break;
+                    case R.id.navItem4:
+                        Snackbar.make(snakerview, "hello 4", Snackbar.LENGTH_SHORT).show();
+                        break;
                 }
-            });
+                return false;
 
+
+            }
+        });
 
 
         initFragment();
@@ -140,12 +139,9 @@ public class MainActivity extends BaseActivityMVP {
         tabLayout = findViewById(R.id.tabLayout);
 
         tabLayout.setupWithViewPager(viewpageer);
-//        tabLayout.addTab(tabLayout.newTab().setText("tab1"));
-//        tabLayout.addTab(tabLayout.newTab().setText("tab2"));
-//        tabLayout.addTab(tabLayout.newTab().setText("tab3"));
-        for(int i=0;i<tabLayout.getTabCount();i++){
+        for (int i = 0; i < tabLayout.getTabCount(); i++) {
             TabLayout.Tab tabAt = tabLayout.getTabAt(i);
-            tabAt.setText("Tab"+i);
+            tabAt.setText("Tab" + i);
         }
 
         viewpageer.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {

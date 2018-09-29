@@ -58,7 +58,7 @@ public class Fragment3 extends Fragment {
         }
         @Override
         public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = getActivity().getLayoutInflater().inflate(R.layout.item_text, parent);
+            View view = getActivity().getLayoutInflater().inflate(R.layout.item_text, parent,false);
             MyAdapter.ViewHolder holder = new MyAdapter.ViewHolder(view);
             return holder;
         }
