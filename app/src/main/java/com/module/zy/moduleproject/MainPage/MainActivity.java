@@ -1,4 +1,4 @@
-package com.module.zy.moduleproject;
+package com.module.zy.moduleproject.MainPage;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -7,9 +7,12 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
+import com.module.zy.moduleproject.R;
+import com.module.zy.moduleproject.TabFragmentPagerAdapter;
 import com.module.zy.moduleproject.fragment.Fragment1;
 import com.module.zy.moduleproject.fragment.Fragment2;
 import com.module.zy.moduleproject.fragment.Fragment3;
+import com.module.zy.moduleproject.MainPage.persenter.MainPersenter;
 
 import java.util.ArrayList;
 
@@ -19,9 +22,8 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 import module.base.baseframwork.base.BaseActivity;
 import module.base.baseframwork.base.BaseActivityMVP;
-import module.base.baseframwork.base.BasePresenter;
 
-public class MainActivity extends BaseActivityMVP {
+public class MainActivity extends BaseActivityMVP <MainPersenter>{
 
     private Toolbar toolbar1;
     private CoordinatorLayout rootlayout;
@@ -31,7 +33,7 @@ public class MainActivity extends BaseActivityMVP {
     private ArrayList<Fragment> listFragments = new ArrayList<>();
     private TabFragmentPagerAdapter fragmentPagerAdapter;
     private TabLayout tabLayout;
-
+    private MainPersenter mainPersenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,19 +43,12 @@ public class MainActivity extends BaseActivityMVP {
     }
 
     @Override
-    protected BasePresenter initPresenter() {
-        return new BasePresenter() {
-            @Override
-            public void onCreate() {
+    protected MainPersenter initPresenter() {
+        mainPersenter=new MainPersenter();
+        return mainPersenter;
 
-            }
-
-            @Override
-            public void onSaveInstanceState(Bundle outState) {
-
-            }
-        };
     }
+
 
     @Override
     protected void onCreateActivity(Bundle savedInstanceState) {
