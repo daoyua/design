@@ -1,6 +1,6 @@
-package com.module.zy.moduleproject.MainPage.view;
+package com.module.zy.moduleproject.Fragment1.view;
 
-import com.module.zy.moduleproject.MainPage.dataResponse.MainResponse;
+import com.module.zy.moduleproject.Fragment1.dataResponse.MainResponse;
 
 import module.base.baseframwork.base.BaseView;
 

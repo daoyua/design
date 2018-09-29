@@ -1,10 +1,10 @@
-package com.module.zy.moduleproject.fragment;
+package com.module.zy.moduleproject.Fragment1.persenter;
 
 import android.os.Bundle;
 
-import com.module.zy.moduleproject.MainPage.dataResponse.MainResponse;
-import com.module.zy.moduleproject.MainPage.module.MainModuleImpl;
-import com.module.zy.moduleproject.MainPage.view.MainView;
+import com.module.zy.moduleproject.Fragment1.dataResponse.MainResponse;
+import com.module.zy.moduleproject.Fragment1.module.MainModuleImpl;
+import com.module.zy.moduleproject.Fragment1.view.MainView;
 
 import module.base.baseframwork.base.BasePresenter;
 

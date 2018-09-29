@@ -1,8 +1,8 @@
-package com.module.zy.moduleproject.MainPage.persenter;
+package com.module.zy.moduleproject.Fragment1.persenter;
 
 import android.os.Bundle;
 
-import com.module.zy.moduleproject.MainPage.view.MainView;
+import com.module.zy.moduleproject.Fragment1.view.MainView;
 
 import module.base.baseframwork.base.BasePresenter;
 

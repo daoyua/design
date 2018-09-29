@@ -1,7 +1,7 @@
-package com.module.zy.moduleproject.MainPage.module;
+package com.module.zy.moduleproject.Fragment1.module;
 
-import com.module.zy.moduleproject.MainPage.dataResponse.MainResponse;
-import com.module.zy.moduleproject.MainPage.dataResponse.User;
+import com.module.zy.moduleproject.Fragment1.dataResponse.MainResponse;
+import com.module.zy.moduleproject.Fragment1.dataResponse.User;
 
 import java.util.ArrayList;
 

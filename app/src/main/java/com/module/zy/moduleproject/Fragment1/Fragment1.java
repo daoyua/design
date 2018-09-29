@@ -1,4 +1,4 @@
-package com.module.zy.moduleproject.fragment;
+package com.module.zy.moduleproject.Fragment1;
 
 
 import android.os.Bundle;
@@ -6,10 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.module.zy.moduleproject.MainPage.dataResponse.MainResponse;
-import com.module.zy.moduleproject.MainPage.view.MainView;
+import com.module.zy.moduleproject.Fragment1.dataResponse.MainResponse;
+import com.module.zy.moduleproject.Fragment1.view.MainView;
 import com.module.zy.moduleproject.R;
 import com.module.zy.moduleproject.adapter.Fragment1Adapter;
+import com.module.zy.moduleproject.Fragment1.persenter.Fragment1Persenter;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;

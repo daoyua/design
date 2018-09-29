@@ -1,4 +1,4 @@
-package com.module.zy.moduleproject.MainPage.dataResponse;
+package com.module.zy.moduleproject.Fragment1.dataResponse;
 
 import java.io.Serializable;
 

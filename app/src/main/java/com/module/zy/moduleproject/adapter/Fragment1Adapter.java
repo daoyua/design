@@ -4,13 +4,10 @@ import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
-import com.module.zy.moduleproject.MainPage.dataResponse.MainResponse;
-import com.module.zy.moduleproject.MainPage.dataResponse.User;
+import com.module.zy.moduleproject.Fragment1.dataResponse.MainResponse;
+import com.module.zy.moduleproject.Fragment1.dataResponse.User;
 import com.module.zy.moduleproject.R;
-import com.module.zy.moduleproject.fragment.Fragment1;
-import com.module.zy.moduleproject.fragment.Fragment3;
 
 import java.util.ArrayList;
 

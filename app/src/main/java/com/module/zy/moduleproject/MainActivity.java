@@ -1,4 +1,4 @@
-package com.module.zy.moduleproject.MainPage;
+package com.module.zy.moduleproject;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -7,12 +7,10 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
-import com.module.zy.moduleproject.R;
-import com.module.zy.moduleproject.TabFragmentPagerAdapter;
-import com.module.zy.moduleproject.fragment.Fragment1;
+import com.module.zy.moduleproject.Fragment1.Fragment1;
 import com.module.zy.moduleproject.fragment.Fragment2;
 import com.module.zy.moduleproject.fragment.Fragment3;
-import com.module.zy.moduleproject.MainPage.persenter.MainPersenter;
+import com.module.zy.moduleproject.Fragment1.persenter.MainPersenter;
 
 import java.util.ArrayList;
 
