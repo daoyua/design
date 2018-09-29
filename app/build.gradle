@@ -25,16 +25,17 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-
-        api mlibrarys.appcompat
-        implementation mlibrarys.constraintlayout
-        implementation mlibrarys.legacy_support
-        testImplementation mlibrarys.junit
-        androidTestImplementation mlibrarys.test_runner
-        androidTestImplementation mlibrarys.test_espresso
-        implementation mlibrarys.recyclerview
-        implementation mlibrarys.material
-        implementation mlibrarys.baseframwork
     implementation project(':base_mdule')
     implementation project(':loginmodule')
+
+    api mlibrarys.appcompat
+    implementation mlibrarys.constraintlayout
+    implementation mlibrarys.legacy_support
+    testImplementation mlibrarys.junit
+    androidTestImplementation mlibrarys.test_runner
+    androidTestImplementation mlibrarys.test_espresso
+    implementation mlibrarys.recyclerview
+    implementation mlibrarys.material
+    implementation mlibrarys.baseframwork
+    implementation mlibrarys.gson
 }
