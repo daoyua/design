@@ -2,11 +2,6 @@ package com.module.zy.moduleproject.fragment;
 
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
-import module.base.baseframwork.base.BaseFragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +10,12 @@ import com.module.zy.moduleproject.MainPage.dataResponse.MainResponse;
 import com.module.zy.moduleproject.MainPage.view.MainView;
 import com.module.zy.moduleproject.R;
 import com.module.zy.moduleproject.adapter.Fragment1Adapter;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import module.base.baseframwork.base.BaseFragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,7 +38,10 @@ public class Fragment1 extends BaseFragment <Fragment1Persenter> implements Main
     public View initView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = layoutInflater.inflate(R.layout.fragment_fragment1, viewGroup, false);
         recyclerView = view.findViewById(R.id.f1_recyleview);
+        recyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
         adapter = new Fragment1Adapter(getActivity());
+        recyclerView.setAdapter(adapter);
         return view;
     }
 
