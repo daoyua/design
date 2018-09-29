@@ -11,15 +11,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.module.zy.moduleproject.MainPage.dataResponse.MainResponse;
+import com.module.zy.moduleproject.MainPage.view.MainView;
 import com.module.zy.moduleproject.R;
+import com.module.zy.moduleproject.adapter.Fragment1Adapter;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragment1 extends BaseFragment <Fragment1Persenter> {
+public class Fragment1 extends BaseFragment <Fragment1Persenter> implements MainView {
 
     Fragment1Persenter fragment1Persenter;
     private RecyclerView recyclerView;
+    private Fragment1Adapter adapter;
 
 
 //    @Override
@@ -33,6 +37,7 @@ public class Fragment1 extends BaseFragment <Fragment1Persenter> {
     public View initView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = layoutInflater.inflate(R.layout.fragment_fragment1, viewGroup, false);
         recyclerView = view.findViewById(R.id.f1_recyleview);
+        adapter = new Fragment1Adapter(getActivity());
         return view;
     }
 
@@ -45,5 +50,10 @@ public class Fragment1 extends BaseFragment <Fragment1Persenter> {
     @Override
     public void isNightMode(boolean b) {
 
+    }
+
+    @Override
+    public void showdata(MainResponse response) {
+        adapter.setData(response);
     }
 }
