@@ -6,7 +6,8 @@ import com.module.zy.moduleproject.Fragment1.dataResponse.MainResponse;
 import com.module.zy.moduleproject.Fragment1.module.MainModuleImpl;
 import com.module.zy.moduleproject.Fragment1.view.MainView;
 
-import module.base.baseframwork.base.BasePresenter;
+import module.base.baseframwork.base.presenter.BasePresenter;
+
 
 public class Fragment1Persenter extends BasePresenter<MainView> {
     MainModuleImpl mainModule = new MainModuleImpl();

@@ -26,7 +26,7 @@ public class Fragment1Adapter extends RecyclerView.Adapter<Fragment1Adapter.View
     }
     @Override
     public Fragment1Adapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = activity.getLayoutInflater().inflate(R.layout.item_fragment1, parent,false);
+        View view = activity.getLayoutInflater().inflate(R.layout.item_bt, parent,false);
         Fragment1Adapter.ViewHolder holder = new Fragment1Adapter.ViewHolder(view);
         return holder;
     }

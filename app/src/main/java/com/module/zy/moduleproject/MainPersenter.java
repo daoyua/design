@@ -1,10 +1,11 @@
-package com.module.zy.moduleproject.Fragment1.persenter;
+package com.module.zy.moduleproject;
 
 import android.os.Bundle;
 
 import com.module.zy.moduleproject.Fragment1.view.MainView;
 
-import module.base.baseframwork.base.BasePresenter;
+import module.base.baseframwork.base.presenter.BasePresenter;
+
 
 public class MainPersenter extends BasePresenter<MainView> {
     @Override

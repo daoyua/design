@@ -5,27 +5,33 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.module.zy.moduleproject.Fragment1.dataResponse.MainResponse;
+import com.module.zy.moduleproject.Fragment1.dataResponse.User;
+import com.module.zy.moduleproject.Fragment1.persenter.Fragment1Persenter;
 import com.module.zy.moduleproject.Fragment1.view.MainView;
 import com.module.zy.moduleproject.R;
-import com.module.zy.moduleproject.adapter.Fragment1Adapter;
-import com.module.zy.moduleproject.Fragment1.persenter.Fragment1Persenter;
+import com.module.zy.moduleproject.adapter.TestAdapter;
+import com.module.zy.moduleproject.recycleview.BaseLoadMoreHeaderAdapter;
+
+import java.util.ArrayList;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import module.base.baseframwork.base.BaseFragment;
+import module.base.baseframwork.base.fragment.BaseFragment;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragment1 extends BaseFragment <Fragment1Persenter> implements MainView {
+public class Fragment1 extends BaseFragment<Fragment1Persenter> implements MainView {
 
     Fragment1Persenter fragment1Persenter;
     private RecyclerView recyclerView;
-    private Fragment1Adapter adapter;
+    private TestAdapter testAdapter;
+
 
 
 //    @Override
@@ -41,8 +47,6 @@ public class Fragment1 extends BaseFragment <Fragment1Persenter> implements Main
         recyclerView = view.findViewById(R.id.f1_recyleview);
         recyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        adapter = new Fragment1Adapter(getActivity());
-        recyclerView.setAdapter(adapter);
         return view;
     }
 
@@ -56,9 +60,41 @@ public class Fragment1 extends BaseFragment <Fragment1Persenter> implements Main
     public void isNightMode(boolean b) {
 
     }
-
+//    BaseLoadMoreHeaderAdapter  OnLoadMoreListener=new BaseLoadMoreHeaderAdapter.OnLoadMoreListener() {
+//        @Override
+//        public void onLoadMore() {
+//            testAdapter.addAll(data);
+//        }
+//    });
     @Override
-    public void showdata(MainResponse response) {
-        adapter.setData(response);
+    public void showdata( MainResponse response) {
+         ArrayList<User>   data = response.getData();
+        testAdapter = new TestAdapter(mContext,recyclerView, data, R.layout.item_bt);
+//        testAdapter.addAll(data);
+
+        testAdapter.setOnLoadMoreListener(new BaseLoadMoreHeaderAdapter.OnLoadMoreListener() {
+            @Override
+            public void onLoadMore() {
+                Toast.makeText(mContext,"hahahaha",Toast.LENGTH_SHORT).show();
+//                testAdapter.addAll(data);
+//                testAdapter.setLoading(false);
+            }
+        });
+        testAdapter.setOnItemClickListener(new BaseLoadMoreHeaderAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int i) {
+                Toast.makeText(mContext,i+"",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+//        TestAdapter2 adapter2=new TestAdapter2(mContext, data, R.layout.item_bt);
+//        adapter2.setOnItemClickListener(new BaseRecycleAdapter.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(View view, int i) {
+//                Toast.makeText(mContext,i+"",Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        recyclerView.setAdapter(adapter2);
+        recyclerView.setAdapter(testAdapter);
     }
 }

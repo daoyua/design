@@ -10,7 +10,6 @@ import com.google.android.material.tabs.TabLayout;
 import com.module.zy.moduleproject.Fragment1.Fragment1;
 import com.module.zy.moduleproject.fragment.Fragment2;
 import com.module.zy.moduleproject.fragment.Fragment3;
-import com.module.zy.moduleproject.Fragment1.persenter.MainPersenter;
 
 import java.util.ArrayList;
 
@@ -18,10 +17,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
-import module.base.baseframwork.base.BaseActivity;
-import module.base.baseframwork.base.BaseActivityMVP;
+import module.base.baseframwork.base.activity.BaseActivity;
+import module.base.baseframwork.base.activity.BaseActivityMVP;
 
-public class MainActivity extends BaseActivityMVP <MainPersenter>{
+public class MainActivity extends BaseActivityMVP<MainPersenter> {
 
     private Toolbar toolbar1;
     private CoordinatorLayout rootlayout;

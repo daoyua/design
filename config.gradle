@@ -18,7 +18,7 @@ ext{
             recyclerview: 'androidx.recyclerview:recyclerview:1.0.0-rc01',
             material :'com.google.android.material:material:1.0.0-alpha1',
             gson :'com.google.code.gson:gson:2.8.5',
-            baseframwork :'com.github.daoyua:baseframwork:1.01'
+            baseframwork :'com.github.daoyua:baseframwork:1.1'
     ]
 
 
