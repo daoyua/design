@@ -13,7 +13,6 @@ import com.module.zy.moduleproject.Fragment1.persenter.Fragment1Persenter;
 import com.module.zy.moduleproject.Fragment1.view.MainView;
 import com.module.zy.moduleproject.R;
 import com.module.zy.moduleproject.adapter.TestAdapter;
-import com.module.zy.moduleproject.recycleview.BaseLoadMoreHeaderAdapter;
 
 import java.util.ArrayList;
 
@@ -22,6 +21,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import module.base.baseframwork.base.fragment.BaseFragment;
+import module.base.baseframwork.base.recycleview.BaseLoadMoreHeaderAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,7 +31,7 @@ public class Fragment1 extends BaseFragment<Fragment1Persenter> implements MainV
     Fragment1Persenter fragment1Persenter;
     private RecyclerView recyclerView;
     private TestAdapter testAdapter;
-
+    private ArrayList<User> data;
 
 
 //    @Override
@@ -68,7 +68,7 @@ public class Fragment1 extends BaseFragment<Fragment1Persenter> implements MainV
 //    });
     @Override
     public void showdata( MainResponse response) {
-         ArrayList<User>   data = response.getData();
+        data = response.getData();
         testAdapter = new TestAdapter(mContext,recyclerView, data, R.layout.item_bt);
 //        testAdapter.addAll(data);
 
@@ -76,14 +76,14 @@ public class Fragment1 extends BaseFragment<Fragment1Persenter> implements MainV
             @Override
             public void onLoadMore() {
                 Toast.makeText(mContext,"hahahaha",Toast.LENGTH_SHORT).show();
-//                testAdapter.addAll(data);
-//                testAdapter.setLoading(false);
+                testAdapter.addAll(data);
+                testAdapter.setLoading(false);
             }
         });
         testAdapter.setOnItemClickListener(new BaseLoadMoreHeaderAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int i) {
-                Toast.makeText(mContext,i+"",Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext,i+data.get(i).getName(),Toast.LENGTH_SHORT).show();
 
             }
         });

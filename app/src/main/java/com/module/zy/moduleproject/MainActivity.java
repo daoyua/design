@@ -31,14 +31,11 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
     private TabFragmentPagerAdapter fragmentPagerAdapter;
     private TabLayout tabLayout;
     private MainPersenter mainPersenter;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-
-
+    public int intiLayout() {
+        return R.layout.activity_main;
     }
-
     @Override
     protected MainPersenter initPresenter() {
         mainPersenter=new MainPersenter();
@@ -104,10 +101,7 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
         return this;
     }
 
-    @Override
-    public int intiLayout() {
-        return R.layout.activity_main;
-    }
+
 
     @Override
     public int initData() {
