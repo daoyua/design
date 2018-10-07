@@ -24,19 +24,22 @@ android {
 }
 
 dependencies {
-//    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':base_mdule')
     implementation project(':loginmodule')
-
-//    api mlibrarys.appcompat
-//    implementation mlibrarys.constraintlayout
-//    implementation mlibrarys.legacy_support
-//    testImplementation mlibrarys.junit
-//    androidTestImplementation mlibrarys.test_runner
-//    androidTestImplementation mlibrarys.test_espresso
-//    implementation mlibrarys.recyclerview
-//    implementation mlibrarys.material
-//    implementation mlibrarys.gson
-
+    //    api mlibrarys.appcompat
+    //    implementation mlibrarys.constraintlayout
+    //    implementation mlibrarys.legacy_support
+    //    testImplementation mlibrarys.junit
+    //    androidTestImplementation mlibrarys.test_runner
+    //    androidTestImplementation mlibrarys.test_espresso
+    //    implementation mlibrarys.recyclerview
+    //    implementation mlibrarys.material
+    //    implementation mlibrarys.gson
     implementation mlibrarys.baseframwork
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.2'
 }
