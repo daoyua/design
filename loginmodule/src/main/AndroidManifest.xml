@@ -1,7 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.module.zy.loginmodule" >
 
-    <application>
-        <activity android:name=".LoginAcitivity" />
-    </application>
+    <application></application>
 </manifest>
