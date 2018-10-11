@@ -1,7 +1,6 @@
 package com.module.zy.moduleproject;
 
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 
@@ -14,30 +13,24 @@ import com.module.zy.moduleproject.fragment.Fragment2;
 import com.module.zy.moduleproject.fragment.Fragment3;
 import com.module.zy.moduleproject.requestInterface.GetUser;
 import com.module.zy.moduleproject.response.UserResponse;
+import com.module.zy.moduleproject.rxjava2.RetrofitFactory;
 import com.module.zy.moduleproject.rxjava2.SimpleSubscriber;
 
-import org.reactivestreams.Subscription;
-
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
-import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import module.base.baseframwork.base.activity.BaseActivity;
 import module.base.baseframwork.base.activity.BaseActivityMVP;
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends BaseActivityMVP<MainPersenter> {
@@ -120,7 +113,7 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
 
         initFragment();
         //test网路链接
-        RetrofitFactory();
+        getdata();
 //            testRrtrofit();
 
     }
@@ -146,14 +139,16 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
     }
 
     // 将构造函数改成private类型 避免外部创建对象 实现单例思想
-    private void RetrofitFactory() {
-        RetrofitFactory.
+    private void getdata() {
+        retrofit= RetrofitFactory.getRetrofit();
 
 
         // 3 创建接口的代理对象
         GetUser getUser = retrofit.create(GetUser.class);
-         getUser.getUserPostRxandroid("绵阳市aa").subscribeOn(Schedulers.io())
-                 .observeOn(AndroidSchedulers.mainThread()).subscribe(new SimpleSubscriber<UserResponse>() {
+         getUser.getUserPostRxandroid("绵阳市aa")
+                 .subscribeOn(Schedulers.io())
+                 .observeOn(AndroidSchedulers.mainThread())
+                 .subscribe(new SimpleSubscriber<UserResponse>() {
 
 
              @Override
@@ -166,18 +161,6 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
                  Log.e("success:",userResponse.toString());
              }
          });
-//        Call<UserResponse> user = getUser.getUserPost("绵阳市");
-//        user.enqueue(new Callback<UserResponse>() {
-//            @Override
-//            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-////                Log.e("success:",response.body().toString());
-//            }
-//
-//            @Override
-//            public void onFailure(Call<UserResponse> call, Throwable t) {
-////                Log.e("failed:",call.toString());
-//            }
-//        });
     }
 
 
