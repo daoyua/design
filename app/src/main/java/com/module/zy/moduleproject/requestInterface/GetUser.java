@@ -2,6 +2,7 @@ package com.module.zy.moduleproject.requestInterface;
 
 import com.module.zy.moduleproject.response.UserResponse;
 
+import io.reactivex.Observable;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -21,5 +22,9 @@ public interface GetUser {
     @FormUrlEncoded
     @POST("/geocoding")
     Call<UserResponse>getUserPost(@Field("a")String address);
+
+    @FormUrlEncoded
+    @POST("/geocoding")
+    Observable<UserResponse> getUserPostRxandroid(@Field("a")String address);
 
 }
