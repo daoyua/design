@@ -13,8 +13,6 @@ import com.module.zy.moduleproject.fragment.Fragment2;
 import com.module.zy.moduleproject.fragment.Fragment3;
 import com.module.zy.moduleproject.requestInterface.GetUser;
 import com.module.zy.moduleproject.response.UserResponse;
-import com.module.zy.moduleproject.rxjava2.RetrofitFactory;
-import com.module.zy.moduleproject.rxjava2.SimpleSubscriber;
 
 import java.util.ArrayList;
 
@@ -27,11 +25,10 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import module.base.baseframwork.base.activity.BaseActivity;
 import module.base.baseframwork.base.activity.BaseActivityMVP;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import module.base.baseframwork.base.retrofit.RetrofitFactory;
+import module.base.baseframwork.base.retrofit.SimpleSubscriber;
+import module.base.baseframwork.untils.LogUtils;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends BaseActivityMVP<MainPersenter> {
 
@@ -84,6 +81,9 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
 
         navigation = findViewById(R.id.navigation);
 
+
+
+        LogUtils.e("测试log");
         navigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
@@ -118,25 +118,7 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
 
     }
 
-    private void testRrtrofit() {
 
-        retrofit = new Retrofit.Builder().baseUrl("http://gc.ditu.aliyun.com").addConverterFactory(GsonConverterFactory.create()).build();
-        GetUser getUser = retrofit.create(GetUser.class);
-//        Call<UserResponse> user = getUser.getUser();
-//        Call<UserResponse> user = getUser.getUser("绵阳市");
-        Call<UserResponse> user = getUser.getUserPost("绵阳市");
-        user.enqueue(new Callback<UserResponse>() {
-            @Override
-            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-                Log.e("success:", response.body().toString());
-            }
-
-            @Override
-            public void onFailure(Call<UserResponse> call, Throwable t) {
-                Log.e("failed:", call.toString());
-            }
-        });
-    }
 
     // 将构造函数改成private类型 避免外部创建对象 实现单例思想
     private void getdata() {

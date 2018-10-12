@@ -37,7 +37,7 @@ public class Fragment3 extends Fragment {
         initView(view);
         return view;
     }
-   ArrayList<String> data=new ArrayList<>();
+   ArrayList<String> data =new ArrayList<>();
     private void initView(View view) {
         RecyclerView recyle_list = view.findViewById(R.id.recyle_list);
         recyle_list.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
