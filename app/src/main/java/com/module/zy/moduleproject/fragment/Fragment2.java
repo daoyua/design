@@ -2,6 +2,13 @@ package com.module.zy.moduleproject.fragment;
 
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.module.zy.moduleproject.MainPersenter;
+import com.module.zy.moduleproject.R;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -11,16 +18,9 @@ import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import module.base.baseframwork.base.fragment.BaseFragment;
-
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import com.module.zy.moduleproject.MainPersenter;
-import com.module.zy.moduleproject.R;
 
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
@@ -55,8 +55,33 @@ public class Fragment2 extends BaseFragment <MainPersenter>{
                     emitter.onNext("连载3");
                     emitter.onComplete();
                 }
-            }).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io())
+            }).map(new Function<String, String>() {
+               @Override
+               public String apply(String s) throws Exception {
+                   return s;
+               }
+           })
+//                   .flatMap(new Function<String, ObservableSource<String>>() {
+//               @Override
+//               public ObservableSource<String> apply(String s) throws Exception {
+//                   return Observable.fromIterable();
+//               }
+//           })
 
+                   .observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io())
+
+//                    .subscribe(
+// new Consumer<String>() {
+//                        @Override
+//                        public void accept(String s) throws Exception {
+//
+//                        }
+//                    }, new Consumer<Throwable>() {
+//                        @Override
+//                        public void accept(Throwable throwable) throws Exception {
+//
+//                        }
+//                    });
                     .subscribe(new Observer<String>() {
                         @Override
                         public void onSubscribe(Disposable d) {
