@@ -19,10 +19,13 @@ public class Fragment1Persenter extends BasePresenter<MainView> {
             MainResponse data = mainModule.getData();
             mView.showdata(data);
         }
+
     }
 
     @Override
     public void onSaveInstanceState(Bundle bundle) {
 
     }
+
+
 }

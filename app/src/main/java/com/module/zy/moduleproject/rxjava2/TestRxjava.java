@@ -3,8 +3,6 @@ package com.module.zy.moduleproject.rxjava2;
 
 import android.util.Log;
 
-import com.module.zy.moduleproject.Fragment1.dataResponse.User;
-
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -14,7 +12,9 @@ import io.reactivex.disposables.Disposable;
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class TestRxjava {
+
     public TestRxjava() {
+
         Observable<String> observable=Observable.create(new ObservableOnSubscribe<String>() {
             @Override
             public void subscribe(ObservableEmitter<String> emitter) throws Exception {

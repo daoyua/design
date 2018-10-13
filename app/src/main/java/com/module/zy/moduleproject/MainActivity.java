@@ -1,7 +1,6 @@
 package com.module.zy.moduleproject;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
@@ -11,8 +10,6 @@ import com.google.android.material.tabs.TabLayout;
 import com.module.zy.moduleproject.Fragment1.Fragment1;
 import com.module.zy.moduleproject.fragment.Fragment2;
 import com.module.zy.moduleproject.fragment.Fragment3;
-import com.module.zy.moduleproject.requestInterface.GetUser;
-import com.module.zy.moduleproject.response.UserResponse;
 
 import java.util.ArrayList;
 
@@ -20,15 +17,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
 import module.base.baseframwork.base.activity.BaseActivity;
 import module.base.baseframwork.base.activity.BaseActivityMVP;
-import module.base.baseframwork.base.retrofit.RetrofitFactory;
-import module.base.baseframwork.base.retrofit.SimpleSubscriber;
 import module.base.baseframwork.untils.LogUtils;
-import retrofit2.Retrofit;
 
 public class MainActivity extends BaseActivityMVP<MainPersenter> {
 
@@ -43,7 +34,7 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
     private TabFragmentPagerAdapter fragmentPagerAdapter;
     private TabLayout tabLayout;
     private MainPersenter mainPersenter;
-    private Retrofit retrofit;
+
 
 
     @Override
@@ -60,7 +51,7 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
 
     @Override
     protected void onCreateActivity(Bundle bundle) {
-
+        mainPersenter.getdata();
     }
 
 
@@ -80,7 +71,6 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
 
 
         navigation = findViewById(R.id.navigation);
-
 
 
         LogUtils.e("测试log");
@@ -112,38 +102,14 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
 
 
         initFragment();
-        //test网路链接
-        getdata();
+
 //            testRrtrofit();
 
     }
 
 
-
     // 将构造函数改成private类型 避免外部创建对象 实现单例思想
-    private void getdata() {
-        retrofit= RetrofitFactory.getRetrofit();
 
-
-        // 3 创建接口的代理对象
-        GetUser getUser = retrofit.create(GetUser.class);
-         getUser.getUserPostRxandroid("绵阳市aa")
-                 .subscribeOn(Schedulers.io())
-                 .observeOn(AndroidSchedulers.mainThread())
-                 .subscribe(new SimpleSubscriber<UserResponse>() {
-
-
-             @Override
-             public void onSubscribe(Disposable d) {
-
-             }
-
-             @Override
-             public void call(UserResponse userResponse) {
-                 Log.e("success:",userResponse.toString());
-             }
-         });
-    }
 
 
     @Override
@@ -153,8 +119,9 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
 
 
     @Override
-    public int initData() {
-        return 0;
+    public void initData() {
+        //test网路链接
+
     }
 
 
