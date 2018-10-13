@@ -32,6 +32,7 @@ public class Fragment2 extends BaseFragment <MainPersenter>{
 
 
     public Fragment2() {
+
         // Required empty public constructor
     }
 
@@ -66,7 +67,7 @@ public class Fragment2 extends BaseFragment <MainPersenter>{
 //               public ObservableSource<String> apply(String s) throws Exception {
 //                   return Observable.fromIterable();
 //               }
-//           })
+//           })++
 
                    .observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io())
 

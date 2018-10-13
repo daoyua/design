@@ -2,11 +2,5 @@
     package="com.module.zy.base_feature" >
 
 
-    <application
-        android:allowBackup="true"
-
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
-    </application>
+    <application></application>
 </manifest>

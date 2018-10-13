@@ -20,7 +20,7 @@ ext{
             gson :'com.google.code.gson:gson:2.8.5',
 
 
-            baseframwork :'com.github.daoyua:baseframwork:1.111'
+            baseframwork :'com.github.daoyua:baseframwork:1.114'
     ]
 
 
