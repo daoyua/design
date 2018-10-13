@@ -36,7 +36,6 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
     private MainPersenter mainPersenter;
 
 
-
     @Override
     public int intiLayout() {
         return R.layout.activity_main;
@@ -68,11 +67,7 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
 
         CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
         collapsingToolbarLayout.setTitle("Design Library");
-
-
         navigation = findViewById(R.id.navigation);
-
-
         LogUtils.e("测试log");
         navigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -96,34 +91,20 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
                 }
                 return false;
 
-
             }
         });
-
-
         initFragment();
-
-//            testRrtrofit();
-
     }
-
-
-    // 将构造函数改成private类型 避免外部创建对象 实现单例思想
-
-
-
     @Override
     protected BaseActivity getActivity() {
         return this;
     }
-
 
     @Override
     public void initData() {
         //test网路链接
 
     }
-
 
     private void initFragment() {
         Fragment f1 = new Fragment1();
@@ -133,8 +114,6 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
         listFragments.add(f2);
         listFragments.add(f3);
         viewpageer = findViewById(R.id.viewpageer);
-
-
         fragmentPagerAdapter = new TabFragmentPagerAdapter(getSupportFragmentManager(), listFragments);
         viewpageer.setAdapter(fragmentPagerAdapter);
 
@@ -163,21 +142,6 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
             }
         });
 //        viewpageer.setCurrentItem(0);
-    }
-
-    private void pageScrolled(int po) {
-        switch (po) {
-            case 0:
-
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-
-        }
-        ;
-
     }
 
     @Override
