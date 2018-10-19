@@ -10,6 +10,8 @@ import com.google.android.material.tabs.TabLayout;
 import com.module.zy.moduleproject.Fragment1.Fragment1;
 import com.module.zy.moduleproject.fragment.Fragment2;
 import com.module.zy.moduleproject.fragment.Fragment3;
+import com.module.zy.moduleproject.rxbus.Event;
+import com.module.zy.moduleproject.rxbus.RxBus;
 
 import java.util.ArrayList;
 
