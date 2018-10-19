@@ -51,6 +51,7 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
     @Override
     protected void onCreateActivity(Bundle bundle) {
         mainPersenter.getdata();
+
     }
 
 
