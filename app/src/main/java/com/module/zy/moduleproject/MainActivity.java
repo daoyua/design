@@ -10,8 +10,6 @@ import com.google.android.material.tabs.TabLayout;
 import com.module.zy.moduleproject.Fragment1.Fragment1;
 import com.module.zy.moduleproject.fragment.Fragment2;
 import com.module.zy.moduleproject.fragment.Fragment3;
-import com.module.zy.moduleproject.rxbus.Event;
-import com.module.zy.moduleproject.rxbus.RxBus;
 
 import java.util.ArrayList;
 
@@ -21,6 +19,8 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 import module.base.baseframwork.base.activity.BaseActivity;
 import module.base.baseframwork.base.activity.BaseActivityMVP;
+import module.base.baseframwork.base.rxbus.Event;
+import module.base.baseframwork.base.rxbus.RxBus;
 import module.base.baseframwork.untils.LogUtils;
 
 public class MainActivity extends BaseActivityMVP<MainPersenter> {
@@ -50,28 +50,30 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
 
     }
 
+
+
     @Override
     protected void onCreateActivity(Bundle bundle) {
         mainPersenter.getdata();
-
+        mainPersenter.openRxbus();
+        RxBus.getDefault().post(new Event(10001,LogUtils.getThreadName()+"aaaaaaaaaaaaaaa"));
+        RxBus.getDefault().post(new Event(1000,LogUtils.getThreadName()+"bbbbb"));
     }
 
 
     @Override
     protected void initView() {
-
         rootlayout = findViewById(R.id.rootlayout);
         Snackbar.make(rootlayout, "helloword", Snackbar.LENGTH_SHORT).show();
-
         toolbar1 = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar1);
-
         snakerview = findViewById(R.id.container);
 
         CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
         collapsingToolbarLayout.setTitle("Design Library");
         navigation = findViewById(R.id.navigation);
-        LogUtils.e("测试log");
+        LogUtils.e(LogUtils.getThreadName()+"测试log");
+
         navigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {

@@ -2,7 +2,6 @@ package com.module.zy.moduleproject.fragment;
 
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,8 +20,6 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import module.base.baseframwork.base.fragment.BaseFragment;
-
-import static androidx.constraintlayout.widget.Constraints.TAG;
 
 
 /**
@@ -86,22 +83,22 @@ public class Fragment2 extends BaseFragment <MainPersenter>{
                     .subscribe(new Observer<String>() {
                         @Override
                         public void onSubscribe(Disposable d) {
-                            Log.e(TAG,"onSubscribe");
+//                            Log.e(TAG,"onSubscribe");
                         }
 
                         @Override
                         public void onNext(String s) {
-                            Log.e(TAG,"onNext:"+s);
+//                            Log.e(TAG,"onNext:"+s);
                         }
 
                         @Override
                         public void onError(Throwable e) {
-                            Log.e(TAG,"onError="+e.getMessage());
+//                            Log.e(TAG,"onError="+e.getMessage());
                         }
 
                         @Override
                         public void onComplete() {
-                            Log.e(TAG,"onComplete()");
+//                            Log.e(TAG,"onComplete()");
                         }
                     });
 

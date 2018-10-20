@@ -1,4 +1,4 @@
-package com.module.zy.moduleproject;
+package com.module.zy.moduleproject.fragment;
 
 import android.os.Bundle;
 
@@ -18,17 +18,13 @@ import module.base.baseframwork.untils.LogUtils;
 import retrofit2.Retrofit;
 
 
-public class MainPersenter extends BasePresenter<MainView> {
+public class FragmentPersenter extends BasePresenter<MainView> {
     private Retrofit retrofit;
 
     @Override
     public void onCreate() {
 
-//        RxBus.getDefault().post(new Event(10001,"message"));
-
-
     }
-
 
     @Override
     public void onSaveInstanceState(Bundle bundle) {
@@ -37,7 +33,7 @@ public class MainPersenter extends BasePresenter<MainView> {
 
     @Override
     public void onEvent(Event event) {
-        LogUtils.e("data: "+event.getData().toString());
+
     }
 
 

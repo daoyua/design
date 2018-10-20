@@ -7,6 +7,7 @@ import com.module.zy.moduleproject.Fragment1.module.MainModuleImpl;
 import com.module.zy.moduleproject.Fragment1.view.MainView;
 
 import module.base.baseframwork.base.presenter.BasePresenter;
+import module.base.baseframwork.base.rxbus.Event;
 
 
 public class Fragment1Persenter extends BasePresenter<MainView> {
@@ -24,6 +25,11 @@ public class Fragment1Persenter extends BasePresenter<MainView> {
 
     @Override
     public void onSaveInstanceState(Bundle bundle) {
+
+    }
+
+    @Override
+    public void onEvent(Event event) {
 
     }
 

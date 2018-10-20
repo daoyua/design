@@ -34,12 +34,6 @@ public class Fragment1 extends BaseFragment<Fragment1Persenter> implements MainV
     private ArrayList<User> data;
 
 
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_fragment1, container, false);
-//    }
 
     @Override
     public View initView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
@@ -87,14 +81,7 @@ public class Fragment1 extends BaseFragment<Fragment1Persenter> implements MainV
 
             }
         });
-//        TestAdapter2 adapter2=new TestAdapter2(mContext, data, R.layout.item_bt);
-//        adapter2.setOnItemClickListener(new BaseRecycleAdapter.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(View view, int i) {
-//                Toast.makeText(mContext,i+"",Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//        recyclerView.setAdapter(adapter2);
+
         recyclerView.setAdapter(testAdapter);
     }
 }
