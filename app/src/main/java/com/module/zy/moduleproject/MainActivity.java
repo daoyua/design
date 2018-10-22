@@ -1,5 +1,6 @@
 package com.module.zy.moduleproject;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -7,15 +8,18 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
+import com.jakewharton.rxbinding3.view.RxView;
 import com.module.zy.moduleproject.Fragment1.Fragment1;
 import com.module.zy.moduleproject.fragment.Fragment2;
 import com.module.zy.moduleproject.fragment.Fragment3;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.util.ArrayList;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager.widget.ViewPager;
 import module.base.baseframwork.base.activity.BaseActivity;
 import module.base.baseframwork.base.activity.BaseActivityMVP;
@@ -49,7 +53,15 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
         return mainPersenter;
 
     }
-
+    public void getPermissions(FragmentActivity activity){
+        RxPermissions rxPermissions=new RxPermissions(activity);
+        RxView.clicks(findViewById(R.id.floading_button))
+                .compose(rxPermissions.ensure(Manifest.permission.CAMERA,Manifest.permission.READ_PHONE_STATE))
+                .subscribe(granted -> {
+                    // R.id.enableCamera has been clicked
+                    LogUtils.e(LogUtils.getThreadName()+"权限申请");
+                });
+    }
 
 
     @Override
@@ -58,6 +70,8 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
         mainPersenter.openRxbus();
         RxBus.getDefault().post(new Event(10001,LogUtils.getThreadName()+"aaaaaaaaaaaaaaa"));
         RxBus.getDefault().post(new Event(1000,LogUtils.getThreadName()+"bbbbb"));
+
+        getPermissions(this);
     }
 
 
