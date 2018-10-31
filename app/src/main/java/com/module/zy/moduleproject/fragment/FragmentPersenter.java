@@ -3,7 +3,7 @@ package com.module.zy.moduleproject.fragment;
 import android.os.Bundle;
 
 import com.module.zy.moduleproject.Fragment1.view.MainView;
-import com.module.zy.moduleproject.response.UserResponse;
+import com.module.zy.moduleproject.retrofit2.response.UserResponse;
 import com.module.zy.moduleproject.retrofit2.MynetworkManager;
 
 import java.util.concurrent.TimeUnit;

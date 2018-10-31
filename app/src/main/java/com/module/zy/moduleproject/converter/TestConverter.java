@@ -1,6 +1,6 @@
 package com.module.zy.moduleproject.converter;
 
-import com.module.zy.moduleproject.response.UserResponse;
+import com.module.zy.moduleproject.retrofit2.response.UserResponse;
 
 import java.io.IOException;
 

@@ -1,25 +1,25 @@
 package com.module.zy.moduleproject;
 
-import android.Manifest;
-import android.app.Activity;
 import android.os.Bundle;
 
-import com.jakewharton.rxbinding3.view.RxView;
 import com.module.zy.moduleproject.Fragment1.view.MainView;
-import com.module.zy.moduleproject.response.UserResponse;
+import com.module.zy.moduleproject.retrofit2.GetUser;
+import com.module.zy.moduleproject.retrofit2.response.UserResponse;
 import com.module.zy.moduleproject.retrofit2.MynetworkManager;
-import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.util.concurrent.TimeUnit;
 
-import androidx.fragment.app.FragmentActivity;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Predicate;
 import module.base.baseframwork.base.presenter.BasePresenter;
 import module.base.baseframwork.base.retrofit.CompositeDisposableInter;
+import module.base.baseframwork.base.retrofit.RetrofitFactory;
 import module.base.baseframwork.base.retrofit.SimpleSubscriber;
 import module.base.baseframwork.base.rxbus.Event;
 import module.base.baseframwork.untils.LogUtils;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 
 
@@ -47,7 +47,17 @@ public class MainPersenter extends BasePresenter<MainView> {
 
 
     public void getdata() {
+        RetrofitFactory.getRetrofit().create(GetUser.class).getUser().enqueue(new Callback<UserResponse>() {
+            @Override
+            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+LogUtils.e(response.toString());
+            }
 
+            @Override
+            public void onFailure(Call<UserResponse> call, Throwable t) {
+                LogUtils.e(call.toString());
+            }
+        });
         // 3 创建接口的代理对象
         MynetworkManager.getData("绵阳市").filter(new Predicate<UserResponse>() {
             @Override

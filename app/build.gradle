@@ -4,8 +4,8 @@ apply plugin: 'com.android.application'
 def config = rootProject.ext.android
 def mlibrarys = rootProject.ext.dependencies
 android {
-    compileSdkVersion config.compileSdkVersion
-    buildToolsVersion config.buildToolsVersion
+    compileSdkVersion 28
+    buildToolsVersion '28.0.0'
     defaultConfig {
         applicationId "com.module.zy.moduleproject"
         minSdkVersion config.minSdkVersion
@@ -31,7 +31,7 @@ dependencies {
     //    implementation fileTree(include: ['*.jar'], dir: 'libs')
     api project(':base_mdule')
     api project(':loginmodule')
-    api 'com.github.daoyua:baseframwork:1.124'
+    api 'com.github.daoyua:baseframwork:1.126'
     //https://github.com/tbruyelle/RxPermissions
     implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
     implementation 'com.google.dagger:dagger:2.18'

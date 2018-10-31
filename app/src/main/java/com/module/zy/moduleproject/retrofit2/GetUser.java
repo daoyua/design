@@ -1,6 +1,6 @@
-package com.module.zy.moduleproject.requestInterface;
+package com.module.zy.moduleproject.retrofit2;
 
-import com.module.zy.moduleproject.response.UserResponse;
+import com.module.zy.moduleproject.retrofit2.response.UserResponse;
 
 import io.reactivex.Observable;
 import retrofit2.Call;

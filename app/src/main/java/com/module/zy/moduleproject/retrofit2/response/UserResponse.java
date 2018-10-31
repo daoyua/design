@@ -1,4 +1,4 @@
-package com.module.zy.moduleproject.response;
+package com.module.zy.moduleproject.retrofit2.response;
 
 import module.base.baseframwork.base.response.BaseResponse;
 

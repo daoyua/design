@@ -67,6 +67,7 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
     @Override
     protected void onCreateActivity(Bundle bundle) {
         mainPersenter.getdata();
+        mainPersenter.getdata1();
         mainPersenter.openRxbus();
         RxBus.getDefault().post(new Event(10001,LogUtils.getThreadName()+"aaaaaaaaaaaaaaa"));
         RxBus.getDefault().post(new Event(1000,LogUtils.getThreadName()+"bbbbb"));
@@ -119,11 +120,7 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
         return this;
     }
 
-    @Override
-    public void initData() {
-        //test网路链接
 
-    }
 
     private void initFragment() {
         Fragment f1 = new Fragment1();

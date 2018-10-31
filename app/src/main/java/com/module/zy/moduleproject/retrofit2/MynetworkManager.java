@@ -1,7 +1,6 @@
 package com.module.zy.moduleproject.retrofit2;
 
-import com.module.zy.moduleproject.requestInterface.GetUser;
-import com.module.zy.moduleproject.response.UserResponse;
+import com.module.zy.moduleproject.retrofit2.response.UserResponse;
 
 import io.reactivex.Observable;
 import module.base.baseframwork.base.retrofit.MyNetWorkObsrvable;
