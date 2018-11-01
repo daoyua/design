@@ -67,7 +67,6 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
     @Override
     protected void onCreateActivity(Bundle bundle) {
         mainPersenter.getServer();
-        mainPersenter.getdata();
         mainPersenter.openRxbus();
         RxBus.getDefault().post(new Event(10001,LogUtils.getThreadName()+"aaaaaaaaaaaaaaa"));
         RxBus.getDefault().post(new Event(1000,LogUtils.getThreadName()+"bbbbb"));
