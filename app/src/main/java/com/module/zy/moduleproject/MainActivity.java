@@ -66,13 +66,13 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
 
     @Override
     protected void onCreateActivity(Bundle bundle) {
+        mainPersenter.getServer();
         mainPersenter.getdata();
-        mainPersenter.getdata1();
         mainPersenter.openRxbus();
         RxBus.getDefault().post(new Event(10001,LogUtils.getThreadName()+"aaaaaaaaaaaaaaa"));
         RxBus.getDefault().post(new Event(1000,LogUtils.getThreadName()+"bbbbb"));
 
-        getPermissions(this);
+//        getPermissions(this);
     }
 
 
@@ -87,7 +87,7 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
         CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
         collapsingToolbarLayout.setTitle("Design Library");
         navigation = findViewById(R.id.navigation);
-        LogUtils.e(LogUtils.getThreadName()+"测试log");
+//        LogUtils.e(LogUtils.getThreadName()+"测试log");
 
         navigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
