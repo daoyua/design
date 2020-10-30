@@ -25,6 +25,6 @@ public interface GetUser {
 
     @FormUrlEncoded
     @POST("/geocoding")
-    Observable<UserResponse> getUserPostRxandroid(@Field("a")String address);
+    Observable<UserResponse>  getUserPostRxandroid(@Field("a")String address);
 
 }

@@ -31,7 +31,8 @@ dependencies {
     //    implementation fileTree(include: ['*.jar'], dir: 'libs')
     api project(':base_mdule')
     api project(':loginmodule')
-    api 'com.github.daoyua:baseframwork:1.126'
+    api 'com.github.daoyua:baseframwork:1.139'
+//    api 'com.github.daoyua:baseframwork:1.127'
 
     testImplementation 'junit:junit:4.12'
     //https://github.com/tbruyelle/RxPermissions

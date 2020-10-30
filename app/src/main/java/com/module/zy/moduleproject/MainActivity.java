@@ -1,6 +1,7 @@
 package com.module.zy.moduleproject;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -21,7 +22,6 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager.widget.ViewPager;
-import module.base.baseframwork.base.activity.BaseActivity;
 import module.base.baseframwork.base.activity.BaseActivityMVP;
 import module.base.baseframwork.base.rxbus.Event;
 import module.base.baseframwork.base.rxbus.RxBus;
@@ -89,6 +89,7 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
 //        LogUtils.e(LogUtils.getThreadName()+"测试log");
 
         navigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @SuppressLint("WrongConstant")
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 int id = menuItem.getItemId();
@@ -105,7 +106,7 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
                         Snackbar.make(snakerview, "hello 3", Snackbar.LENGTH_SHORT).show();
                         break;
                     case R.id.navItem4:
-                        Snackbar.make(snakerview, "hello 4", Snackbar.LENGTH_SHORT).show();
+                        Snackbar.make(snakerview, "hello 4", Snackbar.LENGTH_LONG).show();
                         break;
                 }
                 return false;
@@ -114,10 +115,7 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
         });
         initFragment();
     }
-    @Override
-    protected BaseActivity getActivity() {
-        return this;
-    }
+
 
 
 
