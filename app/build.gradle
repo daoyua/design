@@ -4,6 +4,14 @@ apply plugin: 'com.android.application'
 def config = rootProject.ext.android
 def mlibrarys = rootProject.ext.dependencies
 android {
+    signingConfigs {
+        release {
+            storeFile file('C:\\Users\\zy\\Documents\\android\\projects\\desgin\\keystore.jks')
+            storePassword 'zhouyang'
+            keyAlias 'keyalias'
+            keyPassword 'zhouyang'
+        }
+    }
     compileSdkVersion config.compileSdkVersion
     buildToolsVersion config.buildToolsVersion
     defaultConfig {
@@ -18,6 +26,9 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            renderscriptOptimLevel 3
+//            signingConfig signingConfigs.release
+            multiDexEnabled false
         }
     }
 //    dynamicFeatures = [":base_feature"]
