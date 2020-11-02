@@ -8,7 +8,7 @@ android {
         release {
             storeFile file('C:\\Users\\zy\\Documents\\android\\projects\\desgin\\keystore.jks')
             storePassword 'zhouyang'
-            keyAlias 'keyalias'
+            keyAlias 'key0'
             keyPassword 'zhouyang'
         }
     }
@@ -24,11 +24,11 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             renderscriptOptimLevel 3
-//            signingConfig signingConfigs.release
-            multiDexEnabled false
+            signingConfig signingConfigs.release
+            multiDexEnabled true
         }
     }
 //    dynamicFeatures = [":base_feature"]
@@ -43,6 +43,8 @@ dependencies {
     api project(':base_mdule')
     api project(':loginmodule')
     api 'com.github.daoyua:baseframwork:1.139'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 //    api 'com.github.daoyua:baseframwork:1.127'
 
     testImplementation 'junit:junit:4.12'

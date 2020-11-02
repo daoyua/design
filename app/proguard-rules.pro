@@ -52,14 +52,14 @@
 }
 
 #Fragment不需要在AndroidManifest.xml中注册，需要额外保护下
--keep public class * extends module.base.baseframwork.base.*
--keep public class * extends androidx.recyclerview.widget.RecyclerView
--keep public class * extends retrofit2.Converter
--keep public class * extends okhttp3.ResponseBody
--keep public class * extends androidx.appcompat.app.AppCompatActivity
+#-keep public class * extends module.base.baseframwork.base.*
+#-keep public class * extends androidx.recyclerview.widget.RecyclerView
+#-keep public class * extends retrofit2.Converter
+#-keep public class * extends okhttp3.ResponseBody
+#-keep public class * extends a ndroidx.appcompat.app.AppCompatActivity
+#-keep public class * extends  androidx.fragment.app.FragmentPagerAdapter
 -keep public class * extends androidx.fragment.app.Fragment
 -keep public class * extends android.app.Fragment
--keep public class * extends  androidx.fragment.app.FragmentPagerAdapter
 
 # 保持测试相关的代码
 -dontnote junit.framework.**

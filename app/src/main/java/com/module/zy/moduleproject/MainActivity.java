@@ -2,8 +2,10 @@ package com.module.zy.moduleproject;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.navigation.NavigationView;
@@ -13,6 +15,7 @@ import com.jakewharton.rxbinding3.view.RxView;
 import com.module.zy.moduleproject.Fragment1.Fragment1;
 import com.module.zy.moduleproject.fragment.Fragment2;
 import com.module.zy.moduleproject.fragment.Fragment3;
+import com.module.zy.moduleproject.viewtest.TestViewActivity;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.util.ArrayList;
@@ -47,6 +50,23 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
         return R.layout.activity_main;
     }
 
+
+
+    @Override
+    protected void onCreateActivity(Bundle bundle) {
+        mainPersenter.getServer();
+        mainPersenter.openRxbus();
+        RxBus.getDefault().post(new Event(10001,LogUtils.getThreadName()+"aaaaaaaaaaaaaaa"));
+        RxBus.getDefault().post(new Event(1000,LogUtils.getThreadName()+"bbbbb"));
+
+//        getPermissions(this);
+        findViewById(R.id.floading_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startToTestActivity(TestViewActivity.class);
+            }
+        });
+    }
     @Override
     protected MainPersenter initPresenter() {
         mainPersenter = new MainPersenter();
@@ -62,19 +82,11 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
                     LogUtils.e(LogUtils.getThreadName()+"权限申请");
                 });
     }
-
-
-    @Override
-    protected void onCreateActivity(Bundle bundle) {
-        mainPersenter.getServer();
-        mainPersenter.openRxbus();
-        RxBus.getDefault().post(new Event(10001,LogUtils.getThreadName()+"aaaaaaaaaaaaaaa"));
-        RxBus.getDefault().post(new Event(1000,LogUtils.getThreadName()+"bbbbb"));
-
-//        getPermissions(this);
+    public void startToTestActivity(Class a){
+        startActivity(new Intent(this,a));
     }
 
-
+    @SuppressLint("WrongConstant")
     @Override
     protected void initView() {
         rootlayout = findViewById(R.id.rootlayout);
@@ -86,6 +98,9 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
         CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
         collapsingToolbarLayout.setTitle("Design Library");
         navigation = findViewById(R.id.navigation);
+//        ViewStub viewStub=findViewById(R.id.viewStub);
+//        viewStub.inflate();
+
 //        LogUtils.e(LogUtils.getThreadName()+"测试log");
 
         navigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
