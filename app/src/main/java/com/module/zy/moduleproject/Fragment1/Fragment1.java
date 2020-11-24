@@ -70,14 +70,14 @@ public class Fragment1 extends BaseFragment<Fragment1Persenter> implements MainV
             @Override
             public void onLoadMore() {
                 Toast.makeText(mContext,"hahahaha",Toast.LENGTH_SHORT).show();
-                testAdapter.addAll(data);
+                testAdapter.addAll(mPresenter.addData());
                 testAdapter.setLoading(false);
             }
         });
         testAdapter.setOnItemClickListener(new BaseLoadMoreHeaderAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int i) {
-                Toast.makeText(mContext,i+data.get(i).getName(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext,"ID："+data.get(i).getId()+"姓名："+data.get(i).getName(),Toast.LENGTH_SHORT).show();
 
             }
         });

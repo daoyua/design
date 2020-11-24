@@ -56,8 +56,8 @@ public class MainActivity extends BaseActivityMVP<MainPersenter> {
     protected void onCreateActivity(Bundle bundle) {
         mainPersenter.getServer();
         mainPersenter.openRxbus();
-        RxBus.getDefault().post(new Event(10001,LogUtils.getThreadName()+"aaaaaaaaaaaaaaa"));
-        RxBus.getDefault().post(new Event(1000,LogUtils.getThreadName()+"bbbbb"));
+//        RxBus.getDefault().post(new Event(10001,LogUtils.getThreadName()+"aaaaaaaaaaaaaaa"));
+//        RxBus.getDefault().post(new Event(1000,LogUtils.getThreadName()+"bbbbb"));
 
 //        getPermissions(this);
         findViewById(R.id.floading_button).setOnClickListener(new View.OnClickListener() {

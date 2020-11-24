@@ -27,7 +27,7 @@
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:id="@+id/rootlayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:fitsSystemWindows="true"
             tools:context=".MainActivity">
 
@@ -115,25 +115,11 @@
 
 
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom">
 
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-<!--        <ViewStub-->
-<!--            android:id="@+id/viewStub"-->
-<!--            android:layout_marginLeft="200dp"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="bottom"-->
-<!--            android:layout="@layout/activity_view_test"-->
-<!--            ></ViewStub>-->
     </FrameLayout>
     <com.google.android.material.navigation.NavigationView
         android:layout_width="300dp"
+        android:visibility="gone"
         android:layout_height="match_parent"
         android:id="@+id/test_navigation"
         android:layout_gravity="start"
