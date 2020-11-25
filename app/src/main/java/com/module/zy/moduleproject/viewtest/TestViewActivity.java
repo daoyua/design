@@ -16,6 +16,7 @@ public class TestViewActivity extends AppCompatActivity {
         TestMoveView  testview= findViewById(R.id.testview);
         Button button= findViewById(R.id.button);
         MyView myView=new MyView(button);
+
 //        ObjectAnimator objectAnimator=ObjectAnimator.ofInt(myView,"width",500).setDuration(3500);
 //        objectAnimator.start();
 //        ObjectAnimator animator1 = ObjectAnimator.ofFloat(button, "rotation", 0f, 360f);//旋转360度
@@ -25,4 +26,5 @@ public class TestViewActivity extends AppCompatActivity {
 //        animator2.setRepeatCount(-1);
 //        animator2.start();
     }
+
 }

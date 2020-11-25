@@ -1,6 +1,7 @@
 package com.module.zy.moduleproject.Fragment1;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.module.zy.moduleproject.Fragment1.persenter.Fragment1Persenter;
 import com.module.zy.moduleproject.Fragment1.view.MainView;
 import com.module.zy.moduleproject.R;
 import com.module.zy.moduleproject.adapter.TestAdapter;
+import com.module.zy.moduleproject.viewtest.TestViewActivity;
 
 import java.util.ArrayList;
 
@@ -78,7 +80,9 @@ public class Fragment1 extends BaseFragment<Fragment1Persenter> implements MainV
             @Override
             public void onItemClick(View view, int i) {
                 Toast.makeText(mContext,"ID："+data.get(i).getId()+"姓名："+data.get(i).getName(),Toast.LENGTH_SHORT).show();
-
+                if(i==0){
+                    startActivity(new Intent(mContext, TestViewActivity.class));
+                }
             }
         });
 

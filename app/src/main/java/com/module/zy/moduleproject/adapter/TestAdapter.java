@@ -20,9 +20,11 @@ public class TestAdapter  extends BaseLoadMoreHeaderAdapter<User> {
     public void convert(Context context, RecyclerView.ViewHolder viewHolder, User user) {
         if (viewHolder instanceof BaseViewHolder){
             ((BaseViewHolder) viewHolder).setText(R.id.item_bt,user.getName());
+            if(user!=null&&user.getId()==0){
+                ((BaseViewHolder) viewHolder).setText(R.id.item_bt,"拖动测试");
+            }
             if(user!=null&&user.getId()==1){
                 ((BaseViewHolder) viewHolder).setText(R.id.item_bt,"测试自定义1");
-                return;
             }
         }
     }
